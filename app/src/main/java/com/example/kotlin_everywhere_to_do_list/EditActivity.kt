@@ -15,6 +15,8 @@ class EditActivity : AppCompatActivity() {
 
         title = "編輯模式"
 
+
+        // getStringExtra() is used for getting the data from the previous activity which pass some data to this one.
         if (!intent.getStringExtra("event").isNullOrEmpty()) edtText_edit.setText(intent.getStringExtra("event"))
 
         btn_confirm.setOnClickListener {
@@ -23,6 +25,7 @@ class EditActivity : AppCompatActivity() {
         }
 
         btn_cancel.setOnClickListener {
+            //The ActivityResult is propagated back to whoever launched you via onActivityResult().
             this.finish()
         }
 

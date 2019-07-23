@@ -33,8 +33,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun editEvent(){
+        // Intent means an activity by user, a change from the original to another new
+        // Intent(from, to) -> Ex: From this(MainActivity) to EditActivity
+        // intent is just a variable, it would be enabling while call startActivityForResult()
         val intent = Intent(this, EditActivity::class.java)
         val event = tv_display.text
+
+        //putExtra is for carrying some data from the old one to the new one
         intent.putExtra("event", event)
         startActivityForResult(intent, 1)
     }
